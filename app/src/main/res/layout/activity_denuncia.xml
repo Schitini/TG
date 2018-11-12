@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".DenunciaActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="41dp"
+        android:text="HELP BUTTON"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtTipoD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:hint="Digite o Tipo da Denúncia"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:hint="Digite o Endereço da Denúncia"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtBairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o Bairro da Denúncia"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:hint="Digite a Cidade da Denúncia"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnPesquisa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pesquisar Local" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="342dp"
+        android:id="@+id/pesquisaMapa"
+        android:layout_weight="0.54"
+        class="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <Button
+        android:id="@+id/btnRealizarDenuncia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realizar Denúncia"/>
+
+</LinearLayout>
