@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">HelpButton</string>
     <color name="black">#05b6b6</color>
+    <string-array name="Tipo_Denuncia">
+        <item>Furto</item>
+        <item>Roubo</item>
+        <item>Estupro</item>
+        <item>Homicídio</item>
+        <item>Tráfico de drogas</item>
+    </string-array>
 </resources>

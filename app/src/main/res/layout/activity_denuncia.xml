@@ -21,16 +21,9 @@
         android:textSize="35dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/edtTipoD"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:hint="Digite o Tipo da Denúncia"
-        android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtEndereco"
+        android:id="@+id/et_reg_endereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -38,25 +31,27 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtBairro"
+        android:id="@+id/et_reg_bairro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite o Bairro da Denúncia"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtCidade"
+        android:id="@+id/et_reg_cidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:hint="Digite a Cidade da Denúncia"
         android:inputType="text" />
 
-    <Button
-        android:id="@+id/btnPesquisa"
+    <Spinner
+        android:id="@+id/sp_reg_tipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pesquisar Local" />
+        android:entries="@array/Tipo_Denuncia"
+        android:spinnerMode="dialog"></Spinner>
+
 
     <fragment
         android:layout_width="match_parent"

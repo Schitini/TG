@@ -26,13 +26,7 @@
         </activity>
         <activity android:name=".SenhaActivity" />
         <activity android:name=".RegistrarActivity" />
-        <activity android:name=".TelaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".TelaActivity"/>
         <activity android:name=".DenunciaActivity" />
         <activity android:name=".DadosActivity" />
 
