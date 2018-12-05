@@ -46,8 +46,6 @@ public class DenunciaActivity extends AppCompatActivity {
         db = new DBHelper(this);
         botoes2();
         fazDenuncia();
-        //pesquisaLocal();
-        //denuncia();
     }
 
     public void botoes2(){
@@ -56,7 +54,6 @@ public class DenunciaActivity extends AppCompatActivity {
         et_bairro = (EditText)findViewById(R.id.et_reg_bairro);
         et_cidade = (EditText)findViewById(R.id.et_reg_cidade);
         bt_denuncia = (Button)findViewById(R.id.btnRealizarDenuncia);
-        //bt_pesquisa = (Button)findViewById(R.id.btnPesquisa);
     }
 
     public void fazDenuncia(){
@@ -86,15 +83,5 @@ public class DenunciaActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void pesquisaLocal(){
-        bt_pesquisa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(DenunciaActivity.this,VerDenunciaActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }

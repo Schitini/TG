@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String str = "CREATE TABLE Utilizador(username TEXT PRIMARY KEY, password TEXT);";
+        String str = "CREATE TABLE Utilizador(id_user INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT, nome TEXT, rg TEXT, cpf INTEGER, telefone INTEGER);";
         String reg = "CREATE TABLE Registro(id INTEGER PRIMARY KEY AUTOINCREMENT,tipo TEXT, endereco TEXT, bairro TEXT, cidade TEXT);";
         db.execSQL(str);
         db.execSQL(reg);
@@ -32,12 +32,26 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long CriarUtilizador(String username, String password) {
+    public long CriarUtilizador(String username, String password, String nome, String rg, String cpf, String telefone) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username", username);
         cv.put("password", password);
+        cv.put("nome",nome);
+        cv.put("rg",rg);
+        cv.put("cpf",cpf);
+        cv.put("telefone",telefone);
         long result = db.insert("Utilizador", null, cv);
+        return result;
+    }
+
+    public long CriarAdm(String username, String password){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("username",username);
+        cv.put("password",password);
+
+        long result = db.insert("Utilizador",null,cv);
         return result;
     }
 
@@ -121,12 +135,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
 /*
     public Integer validarId(String tipo, String endereco, String bairro, String cidade){
-
         final SQLiteDatabase db = getWritableDatabase();
         final Cursor cursor = db.query("SELECT * FROM Registro", new String[]{"id"}, "tipo = ? AND endereco = ? AND bairro = ? AND cidade = ?", new String[]{tipo,endereco,bairro,cidade}, null,null,null,null);
         //se nulo ou vazio não encontrou nenhum com a mesma data e hora, retorna -1
         if (null == cursor || !cursor.moveToFirst()) return -1;
-
         final Integer id = cursor.getInt(cursor.getColumnIndex("id"));
         cursor.close();
         return id;

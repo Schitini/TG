@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="73dp"
@@ -22,7 +22,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/et_reg_username"
+        android:id="@+id/usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -30,30 +30,10 @@
         android:ems="10"
         android:hint="Usuário"
         android:inputType="textPersonName"
-        android:nextFocusRight="@+id/editText8" />
+        android:nextFocusRight="@+id/et_reg_password1" />
 
     <EditText
-        android:id="@+id/editText8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Telefone"
-        android:inputType="phone" />
-
-    <EditText
-        android:id="@+id/et_reg_password1"
+        android:id="@+id/senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -62,16 +42,61 @@
         android:hint="Senha"
         android:inputType="textPassword" />
 
+
     <EditText
-        android:id="@+id/et_reg_password2"
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="RG"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/ruaAtual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rua"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/bairroAtual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bairro"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/numero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:hint="Confirmar Senha"
-        android:inputType="textPassword" />
-
+        android:hint="Telefone"
+        android:inputType="phone" />
 
     <Button
         android:id="@+id/bt_registrarnovo"
