@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String str = "CREATE TABLE Utilizador(id_user INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT, nome TEXT, rg TEXT, cpf INTEGER, telefone INTEGER);";
+        String str = "CREATE TABLE Utilizador(id_user INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT, nome TEXT, rg TEXT, cpf INTEGER, rua TEXT, bairro TEXT, num INTEGER, telefone INTEGER);";
         String reg = "CREATE TABLE Registro(id INTEGER PRIMARY KEY AUTOINCREMENT,tipo TEXT, endereco TEXT, bairro TEXT, cidade TEXT);";
         db.execSQL(str);
         db.execSQL(reg);
@@ -32,7 +32,8 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long CriarUtilizador(String username, String password, String nome, String rg, String cpf, String telefone) {
+
+    public long CriarUtilizador(String username, String password, String nome, String rg, String cpf, String rua, String bairro, String num, String telefone) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username", username);
@@ -40,6 +41,9 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put("nome",nome);
         cv.put("rg",rg);
         cv.put("cpf",cpf);
+        cv.put("rua",rua);
+        cv.put("bairro",bairro);
+        cv.put("num",num);
         cv.put("telefone",telefone);
         long result = db.insert("Utilizador", null, cv);
         return result;

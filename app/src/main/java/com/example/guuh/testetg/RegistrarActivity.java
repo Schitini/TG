@@ -29,10 +29,11 @@ public class RegistrarActivity extends AppCompatActivity {
         edt_nome = (EditText)findViewById(R.id.nome);
         edt_rg = (EditText)findViewById(R.id.rg);
         edt_cpf = (EditText)findViewById(R.id.cpf);
-        //edt_rua = (EditText)findViewById(R.id.ruaAtual);
-        //edt_bairro = (EditText)findViewById(R.id.bairroAtual);
-        //edt_num = (EditText)findViewById(R.id.numero);
+        edt_rua = (EditText)findViewById(R.id.rua);
+        edt_bairro = (EditText)findViewById(R.id.bairro);
+        edt_num = (EditText)findViewById(R.id.numero);
         edt_tel = (EditText)findViewById(R.id.telefone);
+
         bt_registrar = (Button) findViewById(R.id.bt_registrarnovo);
     }
 
@@ -45,6 +46,9 @@ public class RegistrarActivity extends AppCompatActivity {
                 String nome = edt_nome.getText().toString();
                 String rg = edt_rg.getText().toString();
                 String cpf = edt_cpf.getText().toString();
+                String rua = edt_rua.getText().toString();
+                String bairro = edt_bairro.getText().toString();
+                String num = edt_num.getText().toString();
                 String tel = edt_tel.getText().toString();
 
 
@@ -74,22 +78,49 @@ public class RegistrarActivity extends AppCompatActivity {
                 else if(cpf.equals("")){
                     Toast.makeText(RegistrarActivity.this,"Deve preencher o campo CPF, tente novamente!", Toast.LENGTH_SHORT).show();
                 }
+                else if(rua.equals("")){
+                    Toast.makeText(RegistrarActivity.this,"Deve preencher o campo Rua, tente novamente!", Toast.LENGTH_SHORT).show();
+                }
+                else if(bairro.equals("")){
+                    Toast.makeText(RegistrarActivity.this, "Deve preencher o campo Bairro, tente novamente!", Toast.LENGTH_SHORT).show();
+                }
+                else if(num.equals("")){
+                    Toast.makeText(RegistrarActivity.this, "Deve preencher o campo Número, tente novamente!", Toast.LENGTH_SHORT).show();
+                }
                 else if(tel.equals("")){
                     Toast.makeText(RegistrarActivity.this,"Deve preencher o campo Telefone, tente novamente!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    long res = db.CriarUtilizador(username,pass,nome,rg,cpf,tel);
+                    long res = db.CriarUtilizador(username,pass,nome,rg,cpf,rua,bairro,num,tel);
                     if(res>0){
-                        if(ValidaCPF.isCPF(cpf) == true) {
+                        if((ValidaCPF.isCPF(cpf) == true) && (nome.length() >= 7) && (nome.length() <= 50) && (pass.length() >= 4) && (pass.length() <=10)) {
                             Toast.makeText(RegistrarActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                             onBackPressed();
                         }
-                        else{
+                        else if(ValidaCPF.isCPF(cpf) != true && nome.length() < 7 || nome.length() > 50){
+                            Toast.makeText(RegistrarActivity.this, "CPF e Nome inválidos, tente novamente!", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(ValidaCPF.isCPF(cpf) != true && pass.length() < 4 || pass.length() > 10){
+                            Toast.makeText(RegistrarActivity.this,"CPF inválido e senha muito curta ou ultrapassou o limite de caracteres", Toast.LENGTH_LONG).show();
+                        }
+                        else if(nome.length() < 7 || nome.length() > 50 && pass.length() < 4 || pass.length() > 10){
+                            Toast.makeText(RegistrarActivity.this, "Nome inválido e senha muito curta ou ultrapassou o limite de caracteres",Toast.LENGTH_LONG).show();
+                        }
+                        else if(ValidaCPF.isCPF(cpf) != true ){
                             Toast.makeText(RegistrarActivity.this, "CPF Inválido, digite um CPF válido!", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(pass.length() < 4){
+                            Toast.makeText(RegistrarActivity.this, "Senha fraca, digite uma senha maior!",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(pass.length() > 10){
+                            Toast.makeText(RegistrarActivity.this, "Senha ultrapassou o limite de caracteres permitido!", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(RegistrarActivity.this, "Nome Inválido, tente novamente!", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else {
-                        Toast.makeText(RegistrarActivity.this,"Inválido, Tente novamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrarActivity.this,"Usuário já cadastrado! Tente novamente", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

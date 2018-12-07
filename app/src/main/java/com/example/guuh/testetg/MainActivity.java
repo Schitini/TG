@@ -1,8 +1,15 @@
 package com.example.guuh.testetg;
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         db = new DBHelper(this);
-        esqueceuSenha();
+
         username = (EditText)findViewById(R.id.et_username);
         password = (EditText)findViewById(R.id.et_password);
 
@@ -81,14 +88,5 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-    }
-    private void esqueceuSenha(){
-        senha = (TextView)findViewById(R.id.esqueceSenha);
-        senha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this,SenhaActivity.class));
-            }
-        });
     }
 }

@@ -9,11 +9,10 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="215dp"
+        android:layout_height="180dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="90dp"
@@ -62,14 +61,6 @@
             android:layout_marginBottom="100dp"
             android:text="Cadastrar-se" />
 
-        <TextView
-            android:id="@+id/esqueceSenha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:text="Esqueceu sua senha?" />
     </RelativeLayout>
 
 
