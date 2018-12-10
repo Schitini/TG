@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".AlterarSenhaActivity">
+    tools:context=".AlterarEnderecoActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -22,17 +22,48 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/enderecoAntigo"
+        android:id="@+id/ruaAntiga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite seu antigo endereço: "
-        android:nextFocusRight="@+id/enderecoAtual"/>
+        android:hint="Digite sua antiga rua: "
+        android:nextFocusRight="@+id/ruaAtual"
+        android:inputType="text"/>
 
     <EditText
-        android:id="@+id/enderecoAtual"
+        android:id="@+id/ruaAtual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite seu novo endereço: "/>
+        android:hint="Digite sua nova rua: "
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/bairroAntigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu bairro antigo: "
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/bairroAtual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu novo bairro: "
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/numAntigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu antigo número: "
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/numAtual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu novo número: "
+        android:inputType="text"/>
+
 
     <Button
         android:id="@+id/btnAlterarEndereco"

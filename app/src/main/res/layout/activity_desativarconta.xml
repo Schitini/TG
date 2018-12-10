@@ -25,13 +25,16 @@
         android:id="@+id/rgExcluir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite seu RG: "/>
+        android:hint="Digite seu RG: "
+        android:inputType="text"
+        android:nextFocusRight="@id/senhaExcluir"/>
 
     <EditText
         android:id="@+id/senhaExcluir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite sua senha: "/>
+        android:hint="Digite sua senha: "
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/btnExcluir"

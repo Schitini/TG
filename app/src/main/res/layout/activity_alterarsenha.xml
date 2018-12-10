@@ -26,13 +26,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite sua senha antiga: "
-        android:nextFocusRight="@+id/senhaAtual"/>
+        android:nextFocusRight="@+id/senhaAtual"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/senhaAtual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite sua nova senha: "/>
+        android:hint="Digite sua nova senha: "
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/btnAlterarSenha"

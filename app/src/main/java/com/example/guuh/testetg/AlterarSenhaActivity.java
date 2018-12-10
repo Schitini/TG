@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AlterarSenhaActivity extends AppCompatActivity {
     private EditText et_senhaantiga, et_senhaatual;
@@ -16,7 +17,7 @@ public class AlterarSenhaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alterarsenha);
         db = new DBHelper(this);
         botoes();
-        //botaoAlterar();
+        botaoAlterar();
     }
 
     private void botoes(){
@@ -25,5 +26,23 @@ public class AlterarSenhaActivity extends AppCompatActivity {
         btnAlterar = (Button)findViewById(R.id.btnAlterarSenha);
     }
 
+    private void botaoAlterar(){
+        btnAlterar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String senhaold = et_senhaantiga.getText().toString();
+                String senhanew = et_senhaatual.getText().toString();
+                Integer id = db.Id_user();
 
+                if (db.ValidarSenha(senhaold).equals("OK")){
+                    db.alteraSenha(id,senhanew);
+                    Toast.makeText(AlterarSenhaActivity.this,"Senha Alterada com sucesso!",Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                }
+                else{
+                    Toast.makeText(AlterarSenhaActivity.this, "Senha incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 }

@@ -61,4 +61,29 @@
         android:layout_height="wrap_content"
         android:text="Mostra Denúncia"/>
 
+    <TextView
+        android:id="@+id/exiberua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/exibebairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/exibenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <Button
+        android:id="@+id/btnMostraUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostra Usuário"/>
+
+
 </LinearLayout>

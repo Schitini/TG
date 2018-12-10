@@ -40,17 +40,17 @@ public class TelaActivity extends AppCompatActivity {
                 Intent as = new Intent(TelaActivity.this, AlterarSenhaActivity.class);
                 startActivity(as);
                 return (true);
-                //break;
+            //break;
             case R.id.i_alterarendereco:
                 Intent ae = new Intent(TelaActivity.this,AlterarEnderecoActivity.class);
                 startActivity(ae);
                 return (true);
-                //break;
+            //break;
             case R.id.i_desativarconta:
                 Intent dc = new Intent(TelaActivity.this,DesativarContaActivity.class);
                 startActivity(dc);
                 return (true);
-                //break;
+            //break;
         }
         return super.onOptionsItemSelected(item);
     }

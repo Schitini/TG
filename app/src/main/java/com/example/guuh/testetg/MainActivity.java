@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     String res = db.Validarlogin(user, pass);
-                    if(user.equals("admin")){
+                    if(user.equals("admin") && pass.equals("adm1234")){
                         Toast.makeText(MainActivity.this,"Administrador logado com sucesso!",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,VerDenunciaActivity.class);
                         startActivity(intent);
