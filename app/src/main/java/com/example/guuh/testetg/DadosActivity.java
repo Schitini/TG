@@ -123,7 +123,6 @@ public class DadosActivity extends AppCompatActivity implements OnMapReadyCallba
                 Log.d("Mapa","foi");
 
                 mapa.addMarker(new MarkerOptions().position(localizacao).title("Polícia"));
-
         }
 
 }

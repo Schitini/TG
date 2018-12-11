@@ -34,13 +34,13 @@ public class AlterarSenhaActivity extends AppCompatActivity {
                 String senhanew = et_senhaatual.getText().toString();
                 Integer id = db.Id_user();
 
-                if (db.ValidarSenha(senhaold).equals("OK")){
+                if ((db.ValidarSenha(senhaold).equals("OK")) && (senhanew.length() >= 4) && (senhanew.length() <= 10)){
                     db.alteraSenha(id,senhanew);
                     Toast.makeText(AlterarSenhaActivity.this,"Senha Alterada com sucesso!",Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }
                 else{
-                    Toast.makeText(AlterarSenhaActivity.this, "Senha incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AlterarSenhaActivity.this, "Senha incorreta ou fora do limite permitido, tente novamente!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

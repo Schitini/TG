@@ -1,5 +1,6 @@
 package com.example.guuh.testetg;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Toast;
 
 public class AlterarEnderecoActivity extends AppCompatActivity {
     private EditText et_ruaAntigo,et_ruaAtual,et_bairroAntigo,et_bairroAtual,et_numAntigo,et_numAtual;
-    private Button btnAlterar;
+    private Button btnAlterar,btnEndereco;
     DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class AlterarEnderecoActivity extends AppCompatActivity {
         db = new DBHelper(this);
         botoes();
         alteraEnd();
+        verEndereco();
     }
 
     private void botoes(){
@@ -29,6 +31,7 @@ public class AlterarEnderecoActivity extends AppCompatActivity {
         et_numAntigo = (EditText)findViewById(R.id.numAntigo);
         et_numAtual = (EditText)findViewById(R.id.numAtual);
         btnAlterar = (Button)findViewById(R.id.btnAlterarEndereco);
+        btnEndereco = (Button)findViewById(R.id.btnVerEndereco);
     }
 
     private void alteraEnd(){
@@ -52,6 +55,16 @@ public class AlterarEnderecoActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(AlterarEnderecoActivity.this,"Campos inválidos, tente novamente!",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void verEndereco(){
+        btnEndereco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AlterarEnderecoActivity.this,VerEnderecoActivity.class);
+                startActivity(i);
             }
         });
     }

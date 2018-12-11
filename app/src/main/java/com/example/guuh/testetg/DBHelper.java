@@ -311,6 +311,28 @@ public class DBHelper extends SQLiteOpenHelper {
         return total;
     }
 
+    public String mostraNome() {
+        String SelectQuery = "SELECT nome FROM Utilizador";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("nome"));
+        }
+        return total;
+    }
+
+    public String mostraRG() {
+        String SelectQuery = "SELECT rg FROM Utilizador";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("rg"));
+        }
+        return total;
+    }
+
     public String mostraCPF() {
         String SelectQuery = "SELECT cpf FROM Utilizador";
         SQLiteDatabase db = this.getReadableDatabase();
@@ -318,6 +340,17 @@ public class DBHelper extends SQLiteOpenHelper {
         String total="";
         while (c.moveToNext()) {
             total = c.getString(c.getColumnIndex("cpf"));
+        }
+        return total;
+    }
+
+    public String mostraTel() {
+        String SelectQuery = "SELECT telefone FROM Utilizador";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("telefone"));
         }
         return total;
     }

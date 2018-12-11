@@ -16,8 +16,8 @@ import org.w3c.dom.Text;
 
 public class VerDenunciaActivity extends AppCompatActivity {
     public TextView tipo1,mostra_cidade, mostra_bairro, mostra_endereco,mostra_id;
-    public TextView mostra_rua,mostra_bairro2,mostra_num;
-    public Button bt_mostraDenuncia,bt_mostraUsuario;
+    public TextView mostra_nome,mostra_rg,mostra_cpf,mostra_telefone;
+    public Button bt_mostraDenuncia,bt_mostraEndereco,bt_mostraSenha;
     public EditText busca;
     int i = 0;
     DBHelper db;
@@ -28,9 +28,7 @@ public class VerDenunciaActivity extends AppCompatActivity {
 
         db = new DBHelper(this);
         text();
-        textUser();
         mostraDenuncia();
-        mostraUsuario();
     }
 
     private void text(){
@@ -40,15 +38,13 @@ public class VerDenunciaActivity extends AppCompatActivity {
         mostra_cidade = (TextView)findViewById(R.id.cidade);
         mostra_id = (TextView)findViewById(R.id.id);
         //busca = (EditText)findViewById(R.id.buscaID);
+
+        mostra_nome = (TextView)findViewById(R.id.exibeNome);
+        mostra_rg = (TextView)findViewById(R.id.exibeRG);
+        mostra_cpf = (TextView)findViewById(R.id.exibeCPF);
+        mostra_telefone = (TextView)findViewById(R.id.exibeTel);
+
         bt_mostraDenuncia = (Button)findViewById(R.id.btnMostraDenuncia);
-    }
-
-    private void textUser(){
-        mostra_rua = (TextView)findViewById(R.id.exiberua);
-        mostra_bairro2 = (TextView)findViewById(R.id.exibebairro);
-        mostra_num = (TextView)findViewById(R.id.exibenum);
-
-        bt_mostraUsuario = (Button)findViewById(R.id.btnMostraUsuario);
     }
 
     private void mostraDenuncia() {
@@ -56,22 +52,15 @@ public class VerDenunciaActivity extends AppCompatActivity {
         bt_mostraDenuncia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                    mostra_nome.setText("Nome: " + db.mostraNome());
+                    mostra_rg.setText("RG: " + db.mostraRG());
+                    mostra_cpf.setText("CPF: " + db.mostraCPF());
+                    mostra_telefone.setText("Telefone: " + db.mostraTel());
                     tipo1.setText("Tipo da Denúncia: " + db.mostraTipo());
                     mostra_endereco.setText("Endereço da Denúncia: " + db.mostraEndereco());
                     mostra_bairro.setText("Bairro da Denúncia: " + db.mostraBairro());
                     mostra_cidade.setText("Cidade da Denúncia: " + db.mostraCidade());
                     mostra_id.setText(String.valueOf("Número da Denúncia: " + db.mostraId()));
-            }
-        });
-    }
-
-    private void mostraUsuario(){
-        bt_mostraUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostra_rua.setText("Rua: " + db.mostraRua());
-                mostra_bairro2.setText("Bairro: " + db.mostraBairro2());
-                mostra_num.setText("Número: " + db.mostraNum());
             }
         });
     }
