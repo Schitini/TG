@@ -1,9 +1,16 @@
 package com.example.guuh.testetg;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +27,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -30,13 +38,18 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class DenunciaActivity extends AppCompatActivity {
+public class DenunciaActivity extends AppCompatActivity{
     EditText et_endereco,et_bairro,et_cidade;
     Spinner sp_tipo;
     Button bt_denuncia,bt_pesquisa;
     SupportMapFragment pesquisa_map;
     ListView listView;
-    public GoogleMap map;
+    private GoogleMap mMap;
+    private String[] permissoes = new String[]{
+            Manifest.permission.ACCESS_FINE_LOCATION
+    };
+    private LocationManager locationManager;
+    private LocationListener locationListener;
     DBHelper db;
 
     @Override
@@ -46,6 +59,7 @@ public class DenunciaActivity extends AppCompatActivity {
         db = new DBHelper(this);
         botoes2();
         fazDenuncia();
+        //Permissoes.validarPermissoes(permissoes, this, 1);
     }
 
     public void botoes2(){
@@ -54,6 +68,7 @@ public class DenunciaActivity extends AppCompatActivity {
         et_bairro = (EditText)findViewById(R.id.et_reg_bairro);
         et_cidade = (EditText)findViewById(R.id.et_reg_cidade);
         bt_denuncia = (Button)findViewById(R.id.btnRealizarDenuncia);
+        bt_pesquisa = (Button)findViewById(R.id.btnPesquisaEnd);
     }
 
     public void fazDenuncia(){

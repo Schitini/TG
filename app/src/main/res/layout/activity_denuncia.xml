@@ -52,6 +52,12 @@
         android:entries="@array/Tipo_Denuncia"
         android:spinnerMode="dialog"></Spinner>
 
+    <Button
+        android:id="@+id/btnPesquisaEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pesquisar Endereço"/>
+
 
     <fragment
         android:layout_width="match_parent"

@@ -22,8 +22,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String str = "CREATE TABLE Utilizador(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username VARCHAR(30) NOT NULL, password VARCHAR(20) NOT NULL, nome VARCHAR(60) NOT NULL, rg VARCHAR(15) NOT NULL, cpf INTEGER NOT NULL, rua VARCHAR(60) NOT NULL, bairro VARCHAR(60) NOT NULL, num INTEGER NOT NULL, telefone INTEGER NOT NULL);";
         String reg = "CREATE TABLE Registro(id1 INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,tipo VARCHAR(60) NOT NULL, endereco VARCHAR(60) NOT NULL, bairro VARCHAR(60) NOT NULL, cidade VARCHAR(60) NOT NULL);";
+        String ad = "CREATE TABLE Address(id2 INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, endfinal VARCHAR(60) NOT NULL, numfinal VARCHAR(8) NOT NULL, bairrofinal VARCHAR(60) NOT NULL, cidfinal VARCHAR(60) NOT NULL, estado VARCHAR(8) NOT NULL, cep VARCHAR(20) NOT NULL, pais VARCHAR(25) NOT NULL);";
         db.execSQL(str);
         db.execSQL(reg);
+        db.execSQL(ad);
     }
 
 
@@ -31,6 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS Utilizador;");
         db.execSQL("DROP TABLE IF EXISTS Registro;");
+        db.execSQL("DROP TABLE IF EXISTS Address;");
         onCreate(db);
     }
 
@@ -107,6 +110,21 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put("cidade", cidade);
 
         long result = db.insert("Registro", null, cv);
+        return result;
+    }
+
+    public long CriarAddress(String endfinal, String numfinal, String bairrofinal, String cidfinal, String estado, String cep, String pais) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("endfinal", endfinal);
+        cv.put("numfinal", numfinal);
+        cv.put("bairrofinal", bairrofinal);
+        cv.put("cidfinal", cidfinal);
+        cv.put("estado", estado);
+        cv.put("cep", cep);
+        cv.put("pais", pais);
+
+        long result = db.insert("Address", null, cv);
         return result;
     }
 
@@ -351,6 +369,84 @@ public class DBHelper extends SQLiteOpenHelper {
         String total="";
         while (c.moveToNext()) {
             total = c.getString(c.getColumnIndex("telefone"));
+        }
+        return total;
+    }
+
+
+    public String mostraEndFinal() {
+        String SelectQuery = "SELECT endfinal FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("endfinal"));
+        }
+        return total;
+    }
+
+    public String mostraNumFinal() {
+        String SelectQuery = "SELECT numfinal FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("numfinal"));
+        }
+        return total;
+    }
+
+    public String mostraBairroFinal() {
+        String SelectQuery = "SELECT bairrofinal FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("bairrofinal"));
+        }
+        return total;
+    }
+
+    public String mostraCidFinal() {
+        String SelectQuery = "SELECT cidfinal FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("cidfinal"));
+        }
+        return total;
+    }
+
+    public String mostraEstado() {
+        String SelectQuery = "SELECT estado FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("estado"));
+        }
+        return total;
+    }
+
+    public String mostraCEP() {
+        String SelectQuery = "SELECT cep FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("cep"));
+        }
+        return total;
+    }
+
+    public String mostraPais() {
+        String SelectQuery = "SELECT pais FROM Address";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(SelectQuery, null);
+        String total="";
+        while (c.moveToNext()) {
+            total = c.getString(c.getColumnIndex("pais"));
         }
         return total;
     }

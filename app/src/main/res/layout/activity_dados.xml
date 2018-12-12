@@ -34,4 +34,16 @@
         android:layout_height="wrap_content"
         android:text="Ler posição" />
 
+    <TextView
+        android:id="@+id/exibeAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <Button
+        android:id="@+id/btnMostraA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostra Endereço"/>
+
 </LinearLayout>
