@@ -4,45 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/fundo2"
     android:orientation="vertical"
     tools:context=".AlterarEnderecoActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="@drawable/logo1"
+        android:layout_gravity="center"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="90dp"
-        android:text="HELP BUTTON"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="65dp" />
 
     <TextView
         android:id="@+id/exibeRua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeBairro2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <Button
         android:id="@+id/VerUltimoEnd"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_gravity="center"
         android:text="Ver Endereço"/>
 
 </LinearLayout>

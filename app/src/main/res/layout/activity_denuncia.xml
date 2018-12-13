@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/fundo2"
     android:orientation="vertical"
     tools:context=".DenunciaActivity">
 
@@ -54,8 +54,11 @@
 
     <Button
         android:id="@+id/btnPesquisaEnd"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_gravity="center"
         android:text="Pesquisar Endereço"/>
 
 
@@ -68,8 +71,11 @@
 
     <Button
         android:id="@+id/btnRealizarDenuncia"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_gravity="center"
         android:text="Realizar Denúncia"/>
 
 </LinearLayout>

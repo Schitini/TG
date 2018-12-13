@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/fundo2"
     android:orientation="vertical"
     tools:context=".VerDenunciaActivity"
     >
@@ -26,130 +26,153 @@
         android:id="@+id/exibeNome1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/exibeRG1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/exibeCPF1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeTel1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeEndFinal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeNumfinal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeBairroFinal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeCidFinal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeEstado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeCEP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibePais"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <Button
         android:id="@+id/btnMostraAcionamento"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_gravity="center"
         android:text="Mostrar Local Atual"/>
 
     <TextView
         android:id="@+id/exibeNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/exibeRG"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/exibeCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/exibeTel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/endereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:text=""
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/bairro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        />
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/cidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        />
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/tipo12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        />
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textColor="#000"/>
 
 
     <Button
         android:id="@+id/btnMostraDenuncia"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_gravity="center"
         android:text="Mostra Denúncia"/>
 
 

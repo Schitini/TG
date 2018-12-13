@@ -4,22 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/fundo2"
     android:orientation="vertical"
     tools:context=".AlterarEnderecoActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="90dp"
-        android:text="HELP BUTTON"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="@drawable/logo1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp" />
 
     <EditText
         android:id="@+id/ruaAntiga"
@@ -64,15 +62,29 @@
         android:hint="Digite seu novo número: "
         android:inputType="number"/>
 
-    <Button
-        android:id="@+id/btnAlterarEndereco"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Alterar"/>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnAlterarEndereco"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:textColor="@android:color/background_light"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="13dp"
+            android:text="Alterar"/>
 
-    <Button
-        android:id="@+id/btnVerEndereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ver Endereço"/>
+        <Button
+            android:id="@+id/btnVerEndereco"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:textColor="@android:color/background_light"
+            android:layout_gravity="center"
+            android:layout_marginEnd="13dp"
+            android:layout_alignParentRight="true"
+            android:text="Ver Endereço"/>
+    </RelativeLayout>
 </LinearLayout>

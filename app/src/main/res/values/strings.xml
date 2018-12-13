@@ -7,5 +7,9 @@
         <item>Estupro</item>
         <item>Homicídio</item>
         <item>Tráfico de drogas</item>
+        <item>Sequestro</item>
+        <item>Perseguição</item>
+        <item>Outros</item>
     </string-array>
+    <string name="lei">Curiosidades</string>
 </resources>

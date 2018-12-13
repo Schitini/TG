@@ -74,7 +74,7 @@ public class DadosActivity extends AppCompatActivity implements OnMapReadyCallba
                         .build();
                 botoes();
 
-                address = (TextView)findViewById(R.id.exibeAddress);
+                //address = (TextView)findViewById(R.id.exibeAddress);
         }
 
         private void botoes() {

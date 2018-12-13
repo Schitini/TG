@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/fundo2"
     android:orientation="vertical"
     tools:context=".DesativarContaActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="@drawable/logo1"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="70dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="90dp"
-        android:text="HELP BUTTON"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+        />
 
     <EditText
         android:id="@+id/rgExcluir"
@@ -38,8 +37,11 @@
 
     <Button
         android:id="@+id/btnExcluir"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/background_light"
+        android:layout_gravity="center"
         android:text="Desativar"/>
 
 </LinearLayout>

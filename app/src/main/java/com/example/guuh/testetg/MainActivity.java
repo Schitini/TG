@@ -1,18 +1,9 @@
 package com.example.guuh.testetg;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.LocationManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     Button bt_entrar, bt_registar;
     EditText username, password;
+    TextView lei1;
     DBHelper db;
     public TextView senha;
 
@@ -37,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         bt_entrar=(Button) findViewById(R.id.bt_entrar);
         bt_registar=(Button) findViewById(R.id.bt_registrar);
 
+        lei1 = (TextView)findViewById(R.id.txtLei);
+
         botoes();
+
+        curiosidade();
     }
-
-
-
-
 
 
     private void botoes()
@@ -88,5 +80,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    private void curiosidade(){
+        lei1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www12.senado.leg.br/noticias/entenda-o-assunto/lei-maria-da-penha"));
+                startActivity(browser);
+            }
+        });
     }
 }
